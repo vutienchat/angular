@@ -1,0 +1,30 @@
+<a routerLink="/admin/add-product">
+  <button class="btn btn-primary my-5">Add product</button>
+</a>
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let product of listProducts; index as i">
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.quantity }}</td>
+      <td>
+        <a routerLink="/admin/edit-product/{{ product._id }}">
+          <button class="btn btn-danger">Edit</button>
+        </a>
+        <button class="btn btn-warning ms-2" (click)="Remove(product._id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

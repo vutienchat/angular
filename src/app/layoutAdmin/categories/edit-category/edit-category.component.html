@@ -1,0 +1,32 @@
+<div *ngIf="category">
+  <form [formGroup]="formEditCategory" (ngSubmit)="onSubmit()" class="mt-5">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        id="name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="photo" class="form-label">Image</label>
+      <input
+        (change)="onFile($event)"
+        type="file"
+        class="form-control"
+        id="photo"
+      />
+    </div>
+    <div class="mb-3">
+      <img
+        class="img-fluid"
+        height="100"
+        width="150"
+        src="http://localhost:4000/api/category/photo/{{ category._id }}"
+        alt=""
+      />
+    </div>
+    <button class="btn btn-primary">ADD CATEGORY</button>
+  </form>
+</div>

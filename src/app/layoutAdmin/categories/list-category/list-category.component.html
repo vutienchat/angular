@@ -1,0 +1,36 @@
+<a routerLink="/admin/add-category">
+  <button class="btn btn-primary my-5">Add Category</button>
+</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let category of categories; index as i">
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>{{ category.name }}</td>
+      <td>
+        <img
+          class="img-fluid"
+          height="100"
+          width="150"
+          src="http://localhost:4000/api/category/photo/{{ category._id }}"
+          alt=""
+        />
+      </td>
+      <td>
+        <a routerLink="/admin/edit-category/{{ category._id }}">
+          <button class="btn btn-danger">Edit</button>
+        </a>
+        <button class="btn btn-warning ms-2" (click)="Remove(category._id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

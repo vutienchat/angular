@@ -1,0 +1,54 @@
+<form [formGroup]="formProduct" class="mt-5" (ngSubmit)="OnSubmit()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input formControlName="name" type="email" class="form-control" id="name" />
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input
+      formControlName="price"
+      type="text"
+      class="form-control"
+      id="price"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Quantity</label>
+    <input
+      formControlName="quantity"
+      type="text"
+      class="form-control"
+      id="price"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select formControlName="category" class="form-control" id="category">
+      <option *ngFor="let category of categories" value="{{ category._id }}">
+        {{ category.name }}
+      </option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="photo" class="form-label">photo</label>
+    <input
+      type="file"
+      class="form-control"
+      id="photo"
+      (change)="onFile($event)"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Description</label>
+    <textarea
+      formControlName="description"
+      type="text"
+      class="form-control"
+      id="price"
+      cols="30"
+      rows="10"
+    ></textarea>
+  </div>
+  <button class="btn btn-primary">Add</button>
+</form>

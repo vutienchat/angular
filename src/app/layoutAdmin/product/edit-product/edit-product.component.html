@@ -1,0 +1,70 @@
+<div *ngIf="id">
+  <form [formGroup]="formEdit" class="mt-5" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        formControlName="name"
+        type="email"
+        class="form-control"
+        id="name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input
+        formControlName="price"
+        type="text"
+        class="form-control"
+        id="price"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input
+        formControlName="quantity"
+        type="text"
+        class="form-control"
+        id="quantity"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <select formControlName="category" class="form-control" id="category">
+        <option *ngFor="let category of categories" value="{{ category._id }}">
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Description</label>
+      <textarea
+        formControlName="description"
+        type="text"
+        class="form-control"
+        id="price"
+        cols="30"
+        rows="10"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="photo" class="form-label">photo</label>
+      <input
+        type="file"
+        (change)="onFile($event)"
+        class="form-control"
+        id="photo"
+      />
+    </div>
+    <div class="mb-3">
+      <img
+        class="img-fluid"
+        height="100"
+        width="150"
+        src="http://localhost:4000/api/product/photo/{{ id }}"
+        alt=""
+      />
+    </div>
+    <button class="btn btn-primary">Update</button>
+  </form>
+</div>

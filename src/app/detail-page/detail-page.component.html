@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-5">
+      <img
+        class="img-fluid"
+        src="http://localhost:4000/api/product/photo/{{ productDetails._id }}"
+        alt=""
+      />
+    </div>
+    <div class="col-7">
+      <h3>{{ productDetails.name }}</h3>
+      <div>Price: {{ productDetails.price }}</div>
+      <div>Description: {{ productDetails.description }}</div>
+    </div>
+  </div>
+</div>

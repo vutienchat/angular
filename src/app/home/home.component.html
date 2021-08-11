@@ -1,0 +1,69 @@
+<app-slide></app-slide>
+<div class="container mt-5">
+  <div class="row g-4">
+    <div class="col-md-3" *ngFor="let product of listProducts.itemsList">
+      <div class="product_box shadow">
+        <div class="product">
+          <a href="/detail/{{ product._id }}">
+            <img
+              src="http://localhost:4000/api/product/photo/{{ product._id }}"
+              class="img-fluid1"
+          /></a>
+          <div class="product_icon">
+            <a href="#"><i class="bi bi-eye product_item"></i></a>
+            <a href="#"><i class="bi bi-heart product_item"></i></a>
+            <a href="#"><i class="bi bi-camera product_item"></i></a>
+          </div>
+        </div>
+        <div class="product_information">
+          <div>
+            <i class="bi bi-star" id="star"></i>
+            <i class="bi bi-star" id="star"></i>
+            <i class="bi bi-star" id="star"></i>
+            <i class="bi bi-star" id="star"></i>
+            <i class="bi bi-star" id="star"></i>
+          </div>
+          <p class="pt-2">
+            <a
+              href="/#/products/${product._id}"
+              class="text-body"
+              style="text-decoration: none"
+              >{{ product.name }}</a
+            >
+          </p>
+          <p>
+            Giá:<span class="font-medium"> {{ product.price }}</span>
+          </p>
+          <div class="mt-4">
+            <div class="btn btn-primary">
+              <i class="fas fa-cart-plus"></i> ADD TO CART
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div *ngFor="let product of listProducts.itemsList" class="col">
+      <div class="card">
+        <img src="{{ product.image }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <h5 class="card-title">{{ product.price }}</h5>
+          -->
+<!-- <p class="card-text">
+            {{ product.description }}
+          </p>
+          <a routerLink="/edit/{{ product.id }}" class="btn btn-outline-primary"
+            >edit</a
+          >
+          <div class="btn btn-outline-danger ms-2" (click)="Remove(product.id)">
+            remove
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

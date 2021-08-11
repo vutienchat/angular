@@ -1,0 +1,8 @@
+.text-sm {
+  /* font-family: Hind, sans-serif; */
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+  color: #191919 !important;
+  font-weight: 400 !important;
+  padding: 10px 12px !important;
+}
